@@ -1,4 +1,5 @@
 const sequelize = require('sequelize');
+// const {sequelize} = require('../database/models')
 
 const config = require("./config");
 const conexão = new sequelize(config); 
