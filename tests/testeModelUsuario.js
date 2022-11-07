@@ -1,7 +1,8 @@
-const {Usuario,sequelize} = require("../database/models");
-Usuario.findByPk(1,{include:"publicacoes"}).then(
-    data => {
-        console.log(data.toJSON());
+const {Usuario, sequelize} = require('../database/models');
+
+Usuario.findAll({include:'publicacoes'}).then(
+    arrayDeUsuarios => {
+        arrayDeUsuarios.forEach(u=> console.log(u.toJSON()));
         sequelize.close();
     }
 );
